@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        .container
+        {
+            display: flex;
+            justify-content: space-between;
+            padding: 1px;
+            background-color: #484848;
+            border-radius: 8px;
+            width:75%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .logo_container
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            padding-left: 30px;
+        }
+        .other_container
+        {
+            display: flex;
+            gap: 15px;
+            color: white;
+            padding-right: 20px;
+            justify-content: space-evenly;
+            
+        }
+        .other_container>div
+        {
+            margin: auto;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        select
+        {
+            background-color: #484848;
+            color: white;
+            border: 1px solid #484848;
+        }
+        label
+        {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo_container">
+            <h2>MEGAWIDTH</h2>
+        </div>
+        <div class="other_container">
+            <div >
+                <h5>Home</h5>
+            </div>
+            <div>
+                <h5>About</h5>
+            </div>
+            <div>
+                <h5>Bing</h5>
+            </div>
+            <div>
+                <label for="pages">Pages</label>
+                <select id="pages">
+                   
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

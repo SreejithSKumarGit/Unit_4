@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Validator</title>
+</head>
+<body>
+    <label for="select">Gender :</label>
+    <select id="select_btn" name="select">
+        <option>MALE</option>
+        <option>FEMALE</option>
+    </select>
+    <input id="dob_btn" type="number" placeholder="Date of birth">
+    <button onclick="age_Validator()">Check</button>
+</body>
+<script>
+    
+    
+    function age_Validator()
+    {
+        var selectbtn=document.getElementById('select_btn').value;
+        var dobbtn=document.getElementById('dob_btn').value;
+        if(selectbtn=="MALE")
+        {
+            if(dobbtn <=2001)
+            {
+                alert('Legal Age for marriage');
+            }
+            else
+            {
+                alert('illegal Age for marriage');
+            }
+        }
+        else
+        {
+            if(dobbtn <=2004)
+            {
+                alert('Legal Age for marriage');
+            }
+            else
+            {
+                alert('illegal Age for marriage');
+            }
+        }
+        
+
+    }
+
+</script>
+</html>

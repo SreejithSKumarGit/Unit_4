@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Page</title>
+</head>
+<style>
+    #container
+    {
+     text-align: center;
+    }
+    #increaseBtn
+    {
+        background-color: rgb(19, 184, 19);
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #decreaseBtn
+    {
+        background-color:rgb(255, 17, 0);
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #container button :hover
+    {
+        cursor: pointer;
+        border: 2px solid grey;
+    }
+</style>
+<body>
+<div id="container">
+   <h1 id="count">0</h1>
+   <button id="increaseBtn" onclick="increase()">Increase</button>
+   <button id="decreaseBtn" onclick="decrease()">Decrease</button> 
+</div>
+</body>
+<script>
+    if(localStorage.getItem('count')==null)
+    {
+        localStorage.setItem('count',0);
+    }
+    document.getElementById("count").innerText =localStorage.getItem('count');
+    
+ function increase()
+ {
+    var count=localStorage.getItem('count');
+    count++;
+    localStorage.setItem('count',count);
+    document.getElementById("count").innerText=count;
+ }
+ function decrease()
+ {
+    var count=localStorage.getItem('count');
+    count--;
+    localStorage.setItem('count',count);
+    document.getElementById("count").innerText=count;
+ }
+
+</script>
+</html>

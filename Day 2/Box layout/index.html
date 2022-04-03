@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Layout</title>
+    <style>
+        .container
+        {
+            display: flex;
+            flex-direction: row;
+        
+        }
+        .container >div
+        {
+            
+           width:32%;
+           margin: auto;
+           margin-top: 10px;
+
+        }
+
+        .container >div >img
+        {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .container >div >p
+        {
+            color: grey;
+            font-size: 16px;
+        }
+        .container >div >p:last-child
+        {
+            color: black;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+        .container >div > p:last-child:hover
+        {
+            color: aqua;
+           
+        }
+        .container > div >h3
+        {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 23px;
+        }
+        .container > div >h3:hover
+        {
+            text-decoration: underline;
+        }
+        .container >div >img:hover
+        {
+           cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="container">
+      <div>
+          <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog1.jpg.pagespeed.ic.s1W931fRN7.webp">
+          <p>Fashion Tips</p>
+          <h3>What Curling Irons Are The Best Ones</h3>
+          <p>Consectetur adipiscing elit. Laborum fuga incidunt
+              laboriosam voluptas iure, delectus..
+          </p>
+          <p>Read More</p>
+      </div>
+      <div>
+          <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog2.jpg.pagespeed.ic.JaQe05m-gL.webp" >
+          <p>Fashion Tips</p>
+          <h3>Vogues's Ultimate Guide To Autumn/Winter 2019 Shoes</h3>
+          <p>Consectetur adipiscing elit. Laborum fuga incidunt
+              laboriosam voluptas iure, delectus..
+          </p>
+          <p>Read More</p>
+        </div>
+      <div>
+          <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog3.jpg.pagespeed.ic.hExcbkUXD4.webp">
+          <p>Fashion Tips</p>
+          <h3>What Curling Irons Are The Best Ones</h3>
+          <p>Consectetur adipiscing elit. Laborum fuga incidunt
+              laboriosam voluptas iure, delectus..
+          </p>
+          <p>Read More</p>
+        </div>
+  </div>  
+</body>
+</html>

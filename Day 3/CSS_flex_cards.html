@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <style>
+       .container
+       {
+           text-align: center;
+           display: grid;
+           gap: -1px;
+           grid-template-rows: repeat(2,1fr);
+       }
+       .first_container
+       {
+           padding-left: 390px;
+           padding-right:390px;
+           margin-bottom: 20px;
+           text-align: center;
+           line-height: 25px;
+       }
+       .first_container > h1
+       {
+           color: orangered;
+           font-size:60px;
+       }
+       .first_container >p{
+           font-weight: bold;
+       }
+       .second_container{
+           display:grid;
+           grid-template-columns: repeat(3,1fr);
+           grid-template-rows: repeat(1,1fr);
+           gap: 15px;
+           padding: 5px 200px 5px 200px;
+       }
+       .second_container >div
+       {
+           margin-top: -50px;
+       }
+       .second_container >div>img
+       {
+           width: 100%;
+           border-radius: 5px;
+
+       }
+       .second_container >div>h3
+       {
+           color: grey;
+       }
+       @media all and (min-width:450px) and (max-width:850px)
+       {
+        .first_container
+       {
+           padding-left: 50px;
+           padding-right:50px;
+           
+       }
+       .second_container{
+           grid-template-columns: repeat(2,1fr);
+           grid-template-rows: repeat(2,1fr);
+           gap: 10px;
+           margin-top: -180px;
+           padding: 5px 50px 5px 50px;
+       }
+       .second_container > div
+       {
+           width: 100%;
+           margin: auto;
+           margin-top: -1px;
+       }
+       }
+       @media all and (min-width:86px) and (max-width:450px)
+       {
+        .first_container
+       {
+           padding-left: 10px;
+           padding-right:10px;
+           
+       }
+       .second_container{
+           grid-template-columns: repeat(1,1fr);
+           grid-template-rows: repeat(3,1fr);
+           gap: 10px;
+           margin-top: -180px;
+           padding: 5px 10px 5px 10px;
+       }
+       }
+
+
+    </style>
+</head>
+<body>
+ <div class="container">
+    <div class="first_container">
+        <h1>Rooms & Suits</h1>
+        <p>Far far away behind the word mountains,far from the countries
+            Vokalia and Consonantia, there live the blind texts. Seperated they
+            live in Bookmarks gorve right at the coast of the Semantics, a large language ocean. 
+        </p>
+    </div>
+    <div class="second_container">
+        <div >
+            <img src="https://preview.colorlib.com/theme/sogo/images/ximg_1.jpg.pagespeed.ic.sI14MfHd8f.webp">
+           <h2>
+              Single Room 
+           </h2>
+           <h3>90$ PER NIGHT</h3>
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/sogo/images/ximg_2.jpg.pagespeed.ic.Y_xvNxfEhu.webp" alt="">
+            <h2>
+                Family Room
+            </h2>
+            <h3>120$ PER NIGHT</h3>
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/sogo/images/ximg_3.jpg.pagespeed.ic.mYPnC0rXDl.webp" alt="">
+            <h2>
+                Presidential Room
+            </h2>
+            <h3>250$ PER NIGHT</h3>
+        </div>
+    </div> 
+ </div>   
+</body>
+</html>
