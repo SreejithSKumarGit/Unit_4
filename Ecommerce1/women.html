@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women</title>
+</head>
+<style>
+     #navBar
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    #navBar >div
+    {
+        display: flex;
+
+    }
+    #navBar >div >div
+    {
+        margin: 10px;
+    }
+    #container
+    {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+
+</style>
+<body>
+    <div id="navBar">
+        <div>
+            <div><a href="cart.html">Cart</a></div>
+        </div>
+        <div>
+            <div><a href="men.html">Men</a></div>
+            <div><a href="women.html">Women</a></div>
+        </div>
+    </div> 
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    var container=document.getElementById("container");
+    var womenData;
+    if(localStorage.getItem('womenData')===null)
+    {
+        var womenData=[
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+            {
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdbo8KE3hSdWEepgzsl0o1px_E1cn0XgfD-g&usqp=CAU",
+                name:"Lady's Bag",
+                price: 1500,
+            },
+
+        ];
+        localStorage.setItem('womenData',JSON.stringify(womenData));
+    }
+    var womenData=JSON.parse(localStorage.getItem('womenData'));
+    displayData(womenData);
+    function displayData(womenData)
+    {
+        womenData.forEach(element => {
+            var prodCard=document.createElement('div');
+            var image=document.createElement('img');
+            image.src=element.image;
+            var name=document.createElement('h4');
+            name.innerText=element.name;
+            var price=document.createElement('h4');
+            price.innerText=element.price;
+            var cartButton=document.createElement('button');
+            cartButton.innerText='Add to cart';
+            cartButton.addEventListener('click',function()
+            {
+                addTocart(element);
+            });
+            prodCard.append(image,name,price,cartButton);
+            container.append(prodCard); 
+            
+        });
+    }
+        var cart;
+        function addTocart(product)
+        {
+          if(localStorage.getItem('cart')===null)
+          {
+              var cart=[];
+              localStorage.setItem('cart',JSON.stringify(cart));
+
+          }
+          var cart=JSON.parse(localStorage.getItem('cart'));
+          cart.push(product);
+          localStorage.setItem('cart',JSON.stringify(cart));
+
+        }
+        
+</script>
+</html>

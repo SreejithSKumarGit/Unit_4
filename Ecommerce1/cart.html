@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #navBar
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    #navBar >div
+    {
+        display: flex;
+
+    }
+    #navBar >div >div
+    {
+        margin: 10px;
+
+    }
+    #container
+    {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+
+</style>
+<body>
+    <div id="navBar">
+        <div>
+            <div><a href="cart.html">Cart</a></div>
+        </div>
+        <div>
+            <div><a href="men.html">Men</a></div>
+            <div><a href="women.html">Women</a></div>
+        </div>
+    </div>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    var cartData=JSON.parse(localStorage.getItem('cart'));
+    displayCart(cartData);
+    function displayCart(cartData)
+    {
+        cartData.forEach((element,index) => {
+            var prodCard=document.createElement('div');
+            var image=document.createElement('img');
+            image.src=element.image;
+            var name=document.createElement('h4');
+            name.innerText=element.name;
+            var price=document.createElement('h4');
+            price.innerText=element.price;
+            var cartButton=document.createElement('button');
+            cartButton.innerText='Remove from cart';
+            cartButton.addEventListener('click',function()
+            {
+                cartData.splice(index,1);
+                localStorage.setItem('cart',JSON.stringify(cartData));
+                window.location.reload();
+            });
+            prodCard.append(image,name,price,cartButton);
+            document.getElementById("container").append(prodCard); 
+        });
+    }
+</script>
+</html>
