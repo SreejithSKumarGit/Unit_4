@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+</head>
+<style>
+    h1
+    {
+        text-align: center;
+    }
+    #signupDiv
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+    #signupDiv >input
+    {
+        width: 250px;
+        height: 20px;
+        margin: auto;
+    }
+    </style>
+<body>
+   
+    <h1>Sign-up</h1>
+    <form id="signupForm">
+        <div id="signupDiv">
+        <input id="name" type="text" placeholder="Enter your name">
+        <input id="password" type="password" placeholder="Enter your password">
+        <input id="email" type="email" placeholder="Enter your Email id">
+        <input id="signupBtn" type="submit" placeholder="Sign-up">
+        </div>
+    </form>
+</body>
+<script>
+    var userData;
+    if(localStorage.getItem('userData')===null)
+    {
+        var userData=[];
+        localStorage.setItem('userData',JSON.stringify(userData));
+
+    }
+    var userData=JSON.parse(localStorage.getItem('userData'));
+    document.querySelector('form').addEventListener('submit', addData);
+    function addData()
+    {
+        event.preventDefault();
+        var userObj={
+            name:document.getElementById("name").value,
+            password:document.getElementById("password").value,
+            email:document.getElementById("email").value,  
+        }
+        userData.push(userObj);
+        localStorage.setItem('userData',JSON.stringify(userData)); 
+        window.location.href='login.html';     
+    }
+</script>
+</html>
