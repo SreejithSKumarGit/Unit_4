@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<style>
+    #navBar
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #container
+        {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            text-align: center;
+            gap: 5px;
+        }
+        #container >div>img{
+            width: 100px;
+        }
+        #container >div
+        {
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 10px;
+        }
+</style>
+<body>
+    <div id="navBar">
+        <div>
+            <a href="products.html">Home</a>
+        </div>
+        <div>
+            <a href="cart.html">Cart</a>
+        </div>
+    </div> 
+    <form>
+    <label for="name">NAME : </label>
+    <input name="name" id="name" type="text">
+    <label for="address">NAME : </label>
+    <input  name="address" id="address" type="text">
+    <input type="submit" value="Payment">
+    </form>
+</body>
+</html>
